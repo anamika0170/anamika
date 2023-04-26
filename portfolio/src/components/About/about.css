@@ -1,0 +1,14 @@
+.about {
+  background: #9cf6f6; 
+  padding-bottom: 20px;
+}
+.about .about-text {
+  margin-left: 10px;
+}
+.viewBTN{
+  background-color:#414a52  !important;
+}
+.viewBTN .Link{
+  text-decoration: none;
+  color: #9cf6f6;
+}

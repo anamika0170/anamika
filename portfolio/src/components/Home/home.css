@@ -1,0 +1,60 @@
+.intro {
+  display: table;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  /* background: url('../../assets/img/landingPage.jpg') no-repeat center bottom; */
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/landingPagebg.jpg?alt=media&token=9c0821d7-bc0b-402f-8bb1-3ed897e1162f");
+  background-size: cover;
+  background-position: center;
+  background-color: #171717;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+/* .section-title.center {
+	padding: 10px 0 40px 0;
+} */
+.intro h1 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+  margin-bottom: 20px;
+}
+.intro p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.header .intro-text {
+  padding-top: 240px;
+  padding-bottom: 240px;
+}
+.designation {
+  display: flex;
+  justify-content: center;
+}
+.learnMore {
+  background-color: #9cf6f6 !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+.learnMore .Link {
+  color: black;
+}
+.skills {
+  color: white !important;
+  font-size: 20px !important;
+}
+@media screen and (max-width: 575px) {
+  .designation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

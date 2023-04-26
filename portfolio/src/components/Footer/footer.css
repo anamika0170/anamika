@@ -1,0 +1,15 @@
+.footer-col{
+	color: white !important;
+}
+.footer-col h3{
+	color: #9bf5f5 !important;
+}
+.footer-col .footerlink{
+	text-decoration: none;
+}
+ .footerlinks{
+	padding-top: 20px;
+}
+.footerlink:hover{
+color: #9bf5f5 !important;
+}

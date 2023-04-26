@@ -1,0 +1,59 @@
+.projectDetails {
+    padding: 120px 0;
+    background: #414a52;
+    padding-bottom: 250px;
+    color: white;
+  }
+  .projectDetails .desp {
+    margin-left: 10px;
+  }
+  .desp h3{
+    font-weight: bold;
+  }
+  .skill{
+    color: white !important;
+  }
+  .projectDetails h2{
+    color: white;
+  }
+  .viewBTN{
+    background-color:#414a52  !important;
+  }
+  .viewBTN .Link{
+    text-decoration: none;
+    color: #9cf6f6;
+  }
+.projetLink .Link{
+  text-decoration: none;
+  color: #9cf6f6;
+}
+.seeSteps{
+  display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.backButton{
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  color: black !important;
+  background-color: #9cf6f6 !important;
+    border-radius: 10px !important;
+}
+.backText{
+  font-size: 15px !important;
+  padding-left: 10px !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+.projectLink{
+  color: white !important;
+}
+.projectLink:hover{
+  color: #9cf6f6 !important;
+}
+@media screen and (max-width:450px) {
+  .backText{
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "install-dependencies": "npm run install-portfolio && npm install",
+    "setup-production": "npm run install-portfolio && npm run build-portfolio && npm install",
+    "install-portfolio": "cd portfolio && npm install",
+    "build-portfolio": "cd portfolio && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server --ignore portfolio",
+    "portfolio": "npm start --prefix portfolio",
+    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run portfolio\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-validator": "^7.0.1",
+    "firebase": "^9.19.1",
+    "firebase-admin": "^11.6.0",
+    "helmet": "^6.1.5",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^7.0.4",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "url": "^0.11.0",
+    "xss-clean": "^0.1.1"
+  }
+}

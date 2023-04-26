@@ -1,0 +1,26 @@
+.appbar{
+    background-color: transparent !important;
+}
+.navbar {
+    background-color: transparent !important;
+    padding: 0.2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000 !important;
+    transition: background-color 0.3s ease-in-out !important;
+  }
+  
+  .navbar.scrolled {
+    background-color: #333 !important;
+  }
+
+  .active{
+	color: #9cf6f6 !important;
+  }
+  .nav-link:hover{
+	color: #9cf6f6  !important;
+  }
+  .cancelIcon{
+	color: white !important;
+  }
