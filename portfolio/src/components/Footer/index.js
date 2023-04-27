@@ -40,9 +40,9 @@ function FormRow() {
             <ul>
               {isAvailable.map((project) => (
                 <li key={project.Name} className="footerlinks">
-                  <Link className="footerlink" to={project.url}>
+                  <a className="footerlink" href={project.url}>
                     {project.Name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

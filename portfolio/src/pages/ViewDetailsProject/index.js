@@ -32,7 +32,6 @@ function ProjectDetails() {
   useEffect(() => {
   getProjectDetails(id)
   }, [getProjectDetails, id]);
-  
   const styles = {
     root: {
       flexGrow: 1,
@@ -125,11 +124,11 @@ function ProjectDetails() {
                     <div className="projetLink">
                       <h3>URL : </h3>
                       <p>
-                        <Link to={isAvailable.url} className="Link">
+                        <a href={isAvailable.url} className="Link">
                           {isAvailable.url
                             ? isAvailable.url.replace("https://", "")
                             : ""}
-                        </Link>
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -181,9 +180,9 @@ function ProjectDetails() {
                         </p>
                         <p>
                           {" "}
-                          <Link className="projectLink" to={isAvailable.url}>
+                          <a className="projectLink" href={isAvailable.url}>
                             {isAvailable.url}
-                          </Link>
+                          </a>
                         </p>
                       </div>
                     </div>
