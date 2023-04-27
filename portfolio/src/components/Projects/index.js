@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./project.css";
 import { Container, Grid } from "@mui/material";
 import Button from "@mui/material/Button";
 import { AppContext } from "../../context/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import ViewImages from "../ViewImages";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Projects = () => {
   const { projects, openModal } = useContext(AppContext);
@@ -28,13 +26,6 @@ const Projects = () => {
       setCurrentIndex(0);
     }
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-out",
-      once: true,
-    });
-  }, []);
   return (
     <>
       <div id="projects" className="projects">

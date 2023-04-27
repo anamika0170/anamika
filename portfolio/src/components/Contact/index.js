@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./contact.css";
 import { Alert, Button, Container, Snackbar } from "@mui/material";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { AppContext } from "../../context/appContext";
 
 const Contact = () => {
-  const { state, sendContactForm } = useContext(AppContext);
+  const {sendContactForm } = useContext(AppContext);
   const [userDetails, setUserDetails] = useState({
     name: "",
     email: "",
@@ -31,13 +29,6 @@ const Contact = () => {
     const { name, value } = event.target;
     setUserDetails({ ...userDetails, [name]: value });
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-out",
-      once: true,
-    });
-  }, []);
 
   const showNotification = () => {
     return (

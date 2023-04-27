@@ -19,7 +19,7 @@ const ViewImages = () => {
         </IconButton>
         <img
           src={modalImage}
-          alt="Modal image"
+          alt="ModalImage..."
           // onLoad={props.handleImageLoad}
           // style={{ display: props.imageLoaded ? "block" : "none" }}
         />

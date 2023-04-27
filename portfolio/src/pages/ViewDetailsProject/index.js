@@ -1,13 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
   Grid,
-  Typography,
   Paper,
   Container,
-  Button,
-  Stack,
   Chip,
-  ListItem,
   FormGroup,
   FormControlLabel,
   Checkbox,
@@ -29,7 +25,7 @@ function ProjectDetails() {
     useContext(AppContext);
   useEffect(() => {
     getProjectDetails(id);
-  }, []);
+  }, [getProjectDetails , id]);
   const styles = {
     root: {
       flexGrow: 1,
@@ -80,7 +76,7 @@ function ProjectDetails() {
                   onClick={() => openModal(projectDetails.image)}
                   src={projectDetails.image}
                   className="img-responsive"
-                  alt=""
+                  alt={projectDetails.Name}
                   style={styles.image}
                 />
               </Paper>

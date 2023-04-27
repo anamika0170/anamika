@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,8 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import "./navbar.css";
 import { Container } from "@mui/material";
-import { Link, animateScroll as scroll } from "react-scroll";
-import { AppContext } from "../../context/appContext";
+import { Link } from "react-scroll";
 import CancelIcon from "@mui/icons-material/Cancel";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
@@ -52,7 +51,6 @@ const navItems = [
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { myDetails } = useContext(AppContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -98,7 +96,7 @@ function Navbar() {
           offset={-70}
           duration={500}
         >
-          <img style={{ height: "8vh", cursor: "pointer" }} src={logo} />
+          <img style={{ height: "8vh", cursor: "pointer" }} src={logo} alt="logo..." />
         </Link>
         <Box>
           <CancelIcon className="cancelIcon" />
@@ -144,7 +142,7 @@ function Navbar() {
               sx={{ mr: 2, display: { sm: "none" } }}
             >
               <MenuIcon />
-              <img style={{ height: "8vh", cursor: "pointer" }} src={logo} />
+              <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo} />
             </IconButton>
             <Typography
               variant="h6"
@@ -162,7 +160,7 @@ function Navbar() {
               >
                 {/* {myDetails.Name} */}
 
-                <img style={{ height: "8vh", cursor: "pointer" }} src={logo} />
+                <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo} />
               </Link>
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>

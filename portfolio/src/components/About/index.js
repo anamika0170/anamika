@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Grid, Typography, Paper, Container, Button } from "@mui/material";
+import React, { useContext } from "react";
+import { Grid, Paper, Container, Button } from "@mui/material";
 import "./about.css";
 import { Link } from "react-scroll";
-import { AppContext } from "../../context/appContext";
-import AOS from "aos";
-import "aos/dist/aos.css"; // import the styles
+import { AppContext } from "../../context/appContext"; 
 import ViewImages from "../ViewImages";
 
 function About() {
@@ -32,13 +30,6 @@ function About() {
       // padding: "2rem",
     },
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-out",
-      once: true,
-    });
-  }, []);
   return (
     <div id="about" className="about">
       <Container className="container">
