@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "portfolio/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build",
+          "command": "npm run build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "portfolio/build/$1"
+      }
+    ]
+  }
+  
