@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import "./projectDetail.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../../context/appContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
