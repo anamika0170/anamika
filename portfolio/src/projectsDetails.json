@@ -1,0 +1,100 @@
+[
+    {
+      "_id":"643f74f5c1f45f2ba51783b6",
+      "Id": "1",
+      "Name": "JOB-PORTAL-APPLICATION",
+      "description": "This job portal provides an admin panel application that allows users to create and manage job listings. With this application, admins can easily create job postings, edit or delete existing postings, and track performance based on monthly activity. This application aims to provide a user-friendly interface for managing job listings and enhancing job seekers' career growth opportunities.",
+      "SkillsUsed": [
+        "ReactJs",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Material-UI",
+        "Context-API",
+        "Nodejs",
+        "MongoDB"
+      ],
+      "url": "https://job-portal-webapplication-mi04.onrender.com/landing",
+      "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/job-portal.png?alt=media&token=ea3bcb3c-c0e5-46e2-9829-2d3338722bf9",
+      "image1":"https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/jpstep1.png?alt=media&token=790e6b52-4353-4e3f-ae68-d2a83bcdda74",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/jpstep2.png?alt=media&token=502aec5c-f111-4a29-bfce-2857c4179c7e",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/jpstep3.png?alt=media&token=25be3251-9349-4452-9c65-f20dbb0d6e25",
+      "image4": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/jpstep4.png?alt=media&token=4a8b4b1f-abfd-4ca2-9194-1c79686cb74e",
+      "step1": "Open a web browser and navigate to the URL where the React application is hosted.",
+      "step2": "Log in to the admin panel using valid credentials. Once logged in, navigate to the (Job Listings) section of the application",
+      "step3": "Create a new job posting by filling out the required fields, such as Position, Location, location, and Company Name. Save the job posting to add it to the job listings page.",
+      "step4": "Edit or delete existing job postings by navigating to the Job Listings page and selecting the corresponding job posting. From there, admins can edit the job posting details or delete the job posting altogether. Track performance based on monthly activity by reviewing the analytics dashboard or reports within the application."
+    },
+    {
+      "_id":"643f74f5c1f45f2ba51783b7",
+      "Id": "2",
+      "Name": "BOX-OFFICE-APPLICATION",
+      "description": "The Box Office project is a web-based application that allows users to search for movies or actors and view related details such as box office performance, cast, and crew information. Users can enter search queries for any movie or actor they are interested in, including popular titles like Ram, Pokemon, and Shinchan.",
+      "SkillsUsed": [
+        "ReactJs",
+        "HTML",
+        "CSS",
+        "Styled-Component",
+        "Context-API",
+        "JavaScript"
+      ],
+      "url": " https://anamika0170.github.io/BOX-OFFICE/",
+      "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/boxoffice.png?alt=media&token=d7779521-562e-4181-a368-0fed53e5b107",
+      "image1":"https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/bostep1.png?alt=media&token=a0b1f6a5-6c2f-4027-9c0a-bc094fbaf11c",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/bostep2.png?alt=media&token=b3df0cf4-c618-49bb-b1bc-a32e426b8ba3",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/bostep3.png?alt=media&token=b2efdea0-7031-49e0-bd92-cbae688accde",
+      "image4": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/bostep4.png?alt=media&token=cab60580-6967-4e22-b518-4e2e54000a56",
+      "step1": "Open the Box Office web application on your browser. On the homepage, enter the name of the movie or actor you want to search for in the search box",
+      "step2": "Click the search button to initiate the search",
+      "step3": "The application will display the search results showing relevant movies or actors matching your search query. Select the movie or actor you want to view details for.",
+      "step4": "The application will display the details of the selected movie or actor, including box office performance, cast, and crew information, in a user-friendly interface. You can navigate through different sections of the details using the easy navigation provided"
+    },
+    {
+      "_id":"643f74f5c1f45f2ba51783b8",
+      "Id": "3",
+      "Name": "CRUD-APPLICATION",
+      "description": "The CRUD project is a web-based application that enables users to perform basic Create, Read, Update, and Delete operations on a database. Users can add new records to the database, read existing records, update records with new information, and delete records that are no longer needed. The application provides a simple and intuitive user interface for managing database records efficiently. Users can customize and control their data with ease.",
+      "SkillsUsed": [
+        "ReactJs",
+        "HTML",
+        "CSS",
+        "Material-UI",
+        "Context-API",
+        "JavaScript"
+      ],
+      "url": "https://anamika0170.github.io/crud-application/",
+      "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/crud1.png?alt=media&token=b4c72eba-9593-4def-80f4-ce92f63fe59c",
+      "image1":"https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/step1.png?alt=media&token=78fcd573-8844-4467-98ca-44f1464cfe83",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/step2.png?alt=media&token=f0f4a0fc-1381-4110-84b7-58a03e39b52b",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/step3.png?alt=media&token=de78279e-4171-4cf0-a9c0-349d5b65b5e4",
+      "image4": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/step4.png?alt=media&token=b5af32bd-b299-4599-afe1-417d62f1cd2d",
+      "step1": "Click on Add User Button , when you click Add user button , then one pop-up screen open after that you can fill the details and add user  ",
+      "step2": "Click on Edit Icon in and  when you click edit icon button, then one pop-up screen open and here you can edit you details ",
+      "step3": "Click on Delete Icon , when you click delete icon here also one pop-up show and if you are sure to delete your entry then you click Delete button then your data will delete ",
+      "step4": "You can see your Added and Edited Data on here landing page also"
+    },
+    {
+      "_id":"643f74f5c1f45f2ba51783b9",
+      "Id": "4",
+      "Name": "Form-Validation-APPLICATION",
+      "description": "This React application is designed to validate user input in a registration form. It utilizes React state to handle errors and provide real-time feedback to the user. The form includes five fields - username, email, birthday, password, and confirm password - and the application ensures that each field is filled out correctly before submitting the form.",
+      "SkillsUsed": [
+        "ReactJs",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "url": "https://anamika0170.github.io/form-validation/",
+      "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/formvalidation1.png?alt=media&token=21384fe3-32a4-4aca-9b60-8b2d12b95c70",
+      "image1":"https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/fvstep1.png?alt=media&token=dfc6c0e0-73bc-4cf0-93e8-4b16962dac08",
+      "image2": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/fvstep2.png?alt=media&token=b02f5ac5-5491-4390-9dbc-5dd61ab9ee4c",
+      "image3": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/fvstep3.png?alt=media&token=542a3b9c-69dc-46fe-bd27-7644616dd32a",
+      "image4": "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/fvstep4.png?alt=media&token=d6f5a9a9-0b12-4872-9c10-54b3dacca624",
+      "step1": "Open a web browser and navigate to the URL where the React application is hosted.",
+      "step2": "Once the application has loaded, navigate to the registration form and start filling out the input fields with the required information. The application should provide real-time feedback for each input field, showing any errors or warnings related to the input in question.",
+      "step3": "If any errors or warnings are displayed, correct the information in the input field to satisfy the validation criteria.",
+      "step4": "Once all fields have been filled out correctly, click the Submit button to submit the form. If any fields still contain errors or warnings, the application should prevent the form from being submitted and display the corresponding error messages. If all fields are filled out correctly, the application should store the user data or send it to a server for further processing."
+    }
+    
+  ]
+  

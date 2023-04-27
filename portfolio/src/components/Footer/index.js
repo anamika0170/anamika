@@ -25,7 +25,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function FormRow() {
-  const { projects, instagram, facebook, linkedIn } = useContext(AppContext);
+  const { projects, instagram, facebook, linkedIn ,localSocialLinks , localProjectsData } = useContext(AppContext);
+  const isAvailable = projects.length > 0 ? projects : localProjectsData
   return (
     <React.Fragment>
       <Grid item xs={4}>
@@ -37,7 +38,7 @@ function FormRow() {
           </div>
           <div className="footer-col">
             <ul>
-              {projects.map((project) => (
+              {isAvailable.map((project) => (
                 <li key={project.Name} className="footerlinks">
                   <Link className="footerlink" to={project.url}>
                     {project.Name}
@@ -85,17 +86,17 @@ function FormRow() {
           <div className="footer-col">
             <ul>
               <li className="footerlinks">
-                <Link to={facebook} className="footerlink">
+                <Link to={facebook.length > 0 ? faFacebook : localSocialLinks.facebook} className="footerlink">
                   <FontAwesomeIcon icon={faFacebook} /> Facebook
                 </Link>
               </li>
               <li className="footerlinks">
-                <Link to={instagram} className="footerlink">
+                <Link to={instagram.length > 0 ? instagram : localSocialLinks.instagram} className="footerlink">
                   <FontAwesomeIcon icon={faInstagram} /> Instagram
                 </Link>
               </li>
               <li className="footerlinks">
-                <Link to={linkedIn} className="footerlink">
+                <Link to={linkedIn.length >0 ? linkedIn : localSocialLinks.linkedIn} className="footerlink">
                   <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
                 </Link>
               </li>

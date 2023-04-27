@@ -18,14 +18,20 @@ import { IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProjectDetails() {
-  const [showStep, setShowStep] = useState(false);
-  const navigate = useNavigate();
+  const { getProjectDetails, projectDetails, openModal,getMyProjectById, singleProjectDetails } =
+  useContext(AppContext);
   const { id } = useParams();
-  const { getProjectDetails, projectDetails, openModal } =
-    useContext(AppContext);
+  const [showStep, setShowStep] = useState(false);
+  const [project,setProject]= useState(getMyProjectById(id))
+  const navigate = useNavigate();
+
+  const isAvailable = projectDetails.length > 0 ? projectDetails : project
+ 
+ 
   useEffect(() => {
-    getProjectDetails(id);
+  getProjectDetails(id)
   }, [getProjectDetails, id]);
+  
   const styles = {
     root: {
       flexGrow: 1,
@@ -65,7 +71,7 @@ function ProjectDetails() {
       </IconButton>
       <Container className="container">
         <div className="section-title text-center center">
-          <h2>{projectDetails.Name}</h2>
+          <h2>{isAvailable.Name}</h2>
           <hr />
         </div>
         <div style={styles.root}>
@@ -73,10 +79,10 @@ function ProjectDetails() {
             <Grid item xs={12} sm={6}>
               <Paper style={styles.paper}>
                 <img
-                  onClick={() => openModal(projectDetails.image)}
-                  src={projectDetails.image}
+                  onClick={() => openModal(isAvailable.image)}
+                  src={isAvailable.image}
                   className="img-responsive"
-                  alt={projectDetails.Name}
+                  alt={isAvailable.Name}
                   style={styles.image}
                 />
               </Paper>
@@ -88,7 +94,7 @@ function ProjectDetails() {
                     <strong>
                       <h3>Description:</h3>{" "}
                     </strong>
-                    <p>{projectDetails.description}</p>
+                    <p>{isAvailable.description}</p>
                     <h3>Skills Used</h3>
                     <Paper
                       sx={{
@@ -103,8 +109,8 @@ function ProjectDetails() {
                       }}
                       component="ul"
                     >
-                      {projectDetails.SkillsUsed &&
-                        projectDetails.SkillsUsed.map((skills, index) => {
+                      {isAvailable.SkillsUsed &&
+                        isAvailable.SkillsUsed.map((skills, index) => {
                           return (
                             <Chip
                               key={index}
@@ -118,9 +124,9 @@ function ProjectDetails() {
                     <div className="projetLink">
                       <h3>URL : </h3>
                       <p>
-                        <Link to={projectDetails.url} className="Link">
-                          {projectDetails.url
-                            ? projectDetails.url.replace("https://", "")
+                        <Link to={isAvailable.url} className="Link">
+                          {isAvailable.url
+                            ? isAvailable.url.replace("https://", "")
                             : ""}
                         </Link>
                       </p>
@@ -168,14 +174,14 @@ function ProjectDetails() {
                         <strong>
                           <h3>Step 1 :</h3>{" "}
                         </strong>
-                        <p>{projectDetails.step1}</p>
+                        <p>{isAvailable.step1}</p>
                         <p>
                           <strong>here is url :</strong>
                         </p>
                         <p>
                           {" "}
-                          <Link className="projectLink" to={projectDetails.url}>
-                            {projectDetails.url}
+                          <Link className="projectLink" to={isAvailable.url}>
+                            {isAvailable.url}
                           </Link>
                         </p>
                       </div>
@@ -185,8 +191,8 @@ function ProjectDetails() {
                 <Grid item xs={12} sm={6} data-aos="fade-left">
                   <Paper style={styles.paper}>
                     <img
-                      onClick={() => openModal(projectDetails.image1)}
-                      src={projectDetails.image1}
+                      onClick={() => openModal(isAvailable.image1)}
+                      src={isAvailable.image1}
                       className="img-responsive"
                       alt=""
                       style={styles.image}
@@ -200,8 +206,8 @@ function ProjectDetails() {
                 <Grid item xs={12} sm={6} data-aos="fade-right">
                   <Paper style={styles.paper}>
                     <img
-                      onClick={() => openModal(projectDetails.image2)}
-                      src={projectDetails.image2}
+                      onClick={() => openModal(isAvailable.image2)}
+                      src={isAvailable.image2}
                       className="img-responsive"
                       alt=""
                       style={styles.image}
@@ -215,7 +221,7 @@ function ProjectDetails() {
                         <strong>
                           <h3>Step 2 :</h3>{" "}
                         </strong>
-                        <p>{projectDetails.step2}</p>
+                        <p>{isAvailable.step2}</p>
                       </div>
                     </div>
                   </Paper>
@@ -231,7 +237,7 @@ function ProjectDetails() {
                         <strong>
                           <h3>Step 3 :</h3>{" "}
                         </strong>
-                        <p>{projectDetails.step3}</p>
+                        <p>{isAvailable.step3}</p>
                       </div>
                     </div>
                   </Paper>
@@ -239,8 +245,8 @@ function ProjectDetails() {
                 <Grid item xs={12} sm={6} data-aos="fade-left">
                   <Paper style={styles.paper}>
                     <img
-                      onClick={() => openModal(projectDetails.image3)}
-                      src={projectDetails.image3}
+                      onClick={() => openModal(isAvailable.image3)}
+                      src={isAvailable.image3}
                       className="img-responsive"
                       alt=""
                       style={styles.image}
@@ -254,8 +260,8 @@ function ProjectDetails() {
                 <Grid item xs={12} sm={6} data-aos="fade-right">
                   <Paper style={styles.paper}>
                     <img
-                      onClick={() => openModal(projectDetails.image4)}
-                      src={projectDetails.image4}
+                      onClick={() => openModal(isAvailable.image4)}
+                      src={isAvailable.image4}
                       className="img-responsive"
                       alt=""
                       style={styles.image}
@@ -269,7 +275,7 @@ function ProjectDetails() {
                         <strong>
                           <h3>Step 4 :</h3>{" "}
                         </strong>
-                        <p>{projectDetails.step4}</p>
+                        <p>{isAvailable.step4}</p>
                       </div>
                     </div>
                   </Paper>

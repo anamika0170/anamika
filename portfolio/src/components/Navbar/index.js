@@ -21,6 +21,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import PhoneIcon from "@mui/icons-material/Phone";
+import websiteLogo from '../../assets/logobg.png'
 
 const logo =
   "https://firebasestorage.googleapis.com/v0/b/portfolio-website-81b2a.appspot.com/o/logobg.png?alt=media&token=eeaa5f15-edf4-482e-b71c-59f5610d5c56";
@@ -96,7 +97,7 @@ function Navbar() {
           offset={-70}
           duration={500}
         >
-          <img style={{ height: "8vh", cursor: "pointer" }} src={logo} alt="logo..." />
+          <img style={{ height: "8vh", cursor: "pointer" }} src={logo ? logo : websiteLogo} alt="logo..." />
         </Link>
         <Box>
           <CancelIcon className="cancelIcon" />
@@ -142,7 +143,7 @@ function Navbar() {
               sx={{ mr: 2, display: { sm: "none" } }}
             >
               <MenuIcon />
-              <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo} />
+              <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo ? logo : websiteLogo} />
             </IconButton>
             <Typography
               variant="h6"
@@ -160,7 +161,7 @@ function Navbar() {
               >
                 {/* {myDetails.Name} */}
 
-                <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo} />
+                <img alt="logo..." style={{ height: "8vh", cursor: "pointer" }} src={logo ? logo : websiteLogo} />
               </Link>
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>

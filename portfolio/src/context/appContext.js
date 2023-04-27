@@ -1,6 +1,9 @@
 import React, { createContext, useEffect, useReducer, useCallback } from 'react';
 import axios from 'axios';
 import appReducer from './reducers';
+import localProjectsData from '../projectsDetails.json'
+import myData from '../myData.json';
+import localSocialLinks from '../socialLinks.json'
 import { GET_PROJECTS, GET_PROJECT_DETAILS, GET_MY_DETAILS, OPEN_MODAL, CLOSE_MODAL, GET_SOCIAL_LINKES, SEND_CONTACT_SUCCESS } from './actions';
 
 const initialState = {
@@ -16,6 +19,10 @@ const initialState = {
   sending: false,
   error: null,
   message: null,
+  localProjectsData:localProjectsData,
+  singleProjectDetails:{},
+  localMyDetailsData:myData,
+  localSocialLinks:localSocialLinks
 };
 
 const AppContext = createContext(initialState);
@@ -37,7 +44,7 @@ const AppProvider = ({ children }) => {
         payload: response.data,
       });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }, [authFetch]);
 
@@ -49,7 +56,7 @@ const AppProvider = ({ children }) => {
         payload: response.data,
       });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }, [authFetch]);
 
@@ -85,7 +92,7 @@ const AppProvider = ({ children }) => {
         payload: response.data,
       });
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   }, [authFetch]);
 
@@ -101,6 +108,12 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CLOSE_MODAL });
   }, []);
 
+  const getMyProjectById = (projectId) => {
+    const project = localProjectsData.find((project) => project._id === projectId);
+    // initialState.singleProjectDetails=project
+    return project;
+  };
+
   const value = {
     projects: state.projects,
     projectDetails: state.projectDetails,
@@ -112,8 +125,13 @@ const AppProvider = ({ children }) => {
     linkedIn:state.linkedIn,
     modalImages:state.modalImages,
     message:state.message,
+    localProjectsData:state.localProjectsData,
+    singleProjectDetails:state.singleProjectDetails,
+    localMyDetailsData:state.localMyDetailsData,
+    localSocialLinks:state.localSocialLinks,
     getProjects,
     getProjectDetails,
+    getMyProjectById,
     getMyDetails,
     sendContactForm,
     getSocialLinks,

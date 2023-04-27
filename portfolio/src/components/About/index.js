@@ -4,9 +4,11 @@ import "./about.css";
 import { Link } from "react-scroll";
 import { AppContext } from "../../context/appContext"; 
 import ViewImages from "../ViewImages";
+import aboutImage from '../../assets/about.jpeg'
 
 function About() {
-  const { myDetails, openModal } = useContext(AppContext);
+  const { myDetails, openModal ,localMyDetailsData} = useContext(AppContext);
+  const isAvailable = myDetails.length >0 ? myDetails : localMyDetailsData
   const styles = {
     root: {
       flexGrow: 1,
@@ -31,7 +33,7 @@ function About() {
     },
   };
   return (
-    <div key={myDetails._id} id="about" className="about">
+    <div key={isAvailable._id} id="about" className="about">
       <Container className="container">
         <div className="section-title text-center center">
           <h2>About Me</h2>
@@ -42,8 +44,8 @@ function About() {
             <Grid item xs={12} sm={6}>
               <Paper style={styles.paper}>
                 <img
-                  onClick={() => openModal(myDetails.image)}
-                  src={myDetails.image}
+                  onClick={() => openModal(isAvailable.image)}
+                  src={isAvailable.image ? isAvailable.image : aboutImage}
                   className="img-responsive"
                   alt=""
                   style={styles.image}
@@ -54,13 +56,13 @@ function About() {
               <Paper style={{ ...styles.paper, ...styles.text }}>
                 <div className="about-text">
                   <div className={styles.aboutContent}>
-                    <p>{myDetails.Description}</p>
+                    <p>{isAvailable.Description}</p>
                     <h4>Technical skills</h4>
                     <p>There are technical skills which I worked on : </p>
                     <Container maxWidth="xs">
                       <ul>
-                        {myDetails.technicalSkills &&
-                          myDetails.technicalSkills.map((skills, index) => (
+                        {isAvailable.technicalSkills &&
+                          isAvailable.technicalSkills.map((skills, index) => (
                             <li key={index}>{skills}</li>
                           ))}
                       </ul>

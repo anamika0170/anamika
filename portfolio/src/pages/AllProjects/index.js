@@ -10,7 +10,8 @@ import { IconButton } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function AllProjects() {
-  const { projects, openModal } = React.useContext(AppContext);
+  const { projects, openModal,localProjectsData } = React.useContext(AppContext);
+  const isAvailable = projects.length > 0 ? projects : localProjectsData
   const navigate = useNavigate();
 
   return (
@@ -29,7 +30,7 @@ export default function AllProjects() {
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            {projects.map((project, index) => {
+            {isAvailable.map((project, index) => {
               return (
                 <Grid key={index} sx={{ mt: 5 }} item xs={6}>
                   <div className="card" key={index}>

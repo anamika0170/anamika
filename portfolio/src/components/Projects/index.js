@@ -7,7 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import ViewImages from "../ViewImages";
 
 const Projects = () => {
-  const { projects, openModal } = useContext(AppContext);
+  const {  projects,openModal ,localProjectsData } = useContext(AppContext);
+  const isAvailable = projects.length > 0 ? projects : localProjectsData
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate()
 
@@ -15,12 +16,12 @@ const Projects = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
-      setCurrentIndex(projects.length - 2);
+      setCurrentIndex(isAvailable.length - 2);
     }
   };
 
   const handleNext = () => {
-    if (currentIndex < projects.length - 2) {
+    if (currentIndex < isAvailable.length - 2) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setCurrentIndex(0);
@@ -64,7 +65,7 @@ const Projects = () => {
                   spacing={{ xs: 2, md: 3 }}
                   columns={{ xs: 4, sm: 8, md: 12 }}
                 >
-                  {projects
+                  {isAvailable
                     .slice(currentIndex, currentIndex + 3)
                     .map((item, index) => (
                       <Grid item xs={2} sm={4} md={4} key={index}>
@@ -98,7 +99,7 @@ const Projects = () => {
                   <div>
                     <Button
                       onClick={handleNext}
-                      disabled={currentIndex === projects.length - 3}
+                      disabled={currentIndex === isAvailable.length - 3}
                       className="actionsBTN"
                       variant="contained"
                     >

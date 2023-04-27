@@ -4,16 +4,18 @@ import { Button } from "@mui/material";
 import { AppContext } from "../../context/appContext";
 import { Link } from "react-scroll";
 
+
 const Home = () => {
-  const { myDetails } = useContext(AppContext);
+  const { myDetails,localMyDetailsData } = useContext(AppContext);
+  const isAvailable = myDetails.length >0 ? myDetails : localMyDetailsData
   const renderContent = () => {
     return (
       <div className="row">
         <div className="intro-text">
-          <h1>{myDetails.Name}</h1>
+          <h1>{isAvailable.Name}</h1>
           <div className="designation">
-            {myDetails.Designation &&
-              myDetails.Designation.map((designation) => (
+            {isAvailable.Designation &&
+              isAvailable.Designation.map((designation) => (
                 <p key={designation}>{`•  ${designation}`}</p>
               ))}
           </div>
