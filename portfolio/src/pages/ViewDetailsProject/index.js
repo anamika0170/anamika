@@ -18,11 +18,12 @@ import { IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function ProjectDetails() {
-  const { getProjectDetails, projectDetails, openModal,getMyProjectById, singleProjectDetails } =
+  const { getProjectDetails, projectDetails, openModal,getMyProjectById } =
   useContext(AppContext);
   const { id } = useParams();
   const [showStep, setShowStep] = useState(false);
-  const [project,setProject]= useState(getMyProjectById(id))
+  // const [project,setProject]= useState(getMyProjectById(id))
+  const project = getMyProjectById(id)
   const navigate = useNavigate();
 
   const isAvailable = projectDetails.length > 0 ? projectDetails : project
