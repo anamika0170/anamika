@@ -31,7 +31,7 @@ export default function AllProjects() {
           >
             {projects.map((project, index) => {
               return (
-                <Grid sx={{ mt: 5 }} item xs={6}>
+                <Grid key={index} sx={{ mt: 5 }} item xs={6}>
                   <div className="card" key={index}>
                     <img
                       onClick={(e) => openModal(e.target.currentSrc)}

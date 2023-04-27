@@ -67,7 +67,6 @@ const Contact = () => {
               onSubmit={handleSubmit}
               name="sentMessage"
               id="contactForm"
-              novalidate
             >
               <div className="row">
                 <div className="col-md-6">

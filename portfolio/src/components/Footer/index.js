@@ -38,7 +38,7 @@ function FormRow() {
           <div className="footer-col">
             <ul>
               {projects.map((project) => (
-                <li className="footerlinks">
+                <li key={project.Name} className="footerlinks">
                   <Link className="footerlink" to={project.url}>
                     {project.Name}
                   </Link>
@@ -57,7 +57,7 @@ function FormRow() {
           </div>
           <div className="footer-col">
             <ul>
-              <li className="footerlinks">
+              <li  className="footerlinks">
                 Address: House No: 7-8-K, Sector Vandana Nagar, Kolar Road,
                 Bhopal [M.P]
               </li>

@@ -25,7 +25,7 @@ function ProjectDetails() {
     useContext(AppContext);
   useEffect(() => {
     getProjectDetails(id);
-  }, [getProjectDetails , id]);
+  }, [getProjectDetails, id]);
   const styles = {
     root: {
       flexGrow: 1,
@@ -85,12 +85,10 @@ function ProjectDetails() {
               <Paper style={{ ...styles.paper, ...styles.text }}>
                 <div className="desp">
                   <div className={styles.aboutContent}>
-                    <p>
-                      <strong>
-                        <h3>Description:</h3>{" "}
-                      </strong>
-                      {projectDetails.description}
-                    </p>
+                    <strong>
+                      <h3>Description:</h3>{" "}
+                    </strong>
+                    <p>{projectDetails.description}</p>
                     <h3>Skills Used</h3>
                     <Paper
                       sx={{
@@ -106,9 +104,10 @@ function ProjectDetails() {
                       component="ul"
                     >
                       {projectDetails.SkillsUsed &&
-                        projectDetails.SkillsUsed.map((skills) => {
+                        projectDetails.SkillsUsed.map((skills, index) => {
                           return (
                             <Chip
+                              key={index}
                               variant="outlined"
                               className="skill"
                               label={skills}
@@ -166,12 +165,10 @@ function ProjectDetails() {
                   <Paper style={{ ...styles.paper, ...styles.text }}>
                     <div className="desp">
                       <div className={styles.aboutContent}>
-                        <p>
-                          <strong>
-                            <h3>Step 1 :</h3>{" "}
-                          </strong>
-                          {projectDetails.step1}
-                        </p>
+                        <strong>
+                          <h3>Step 1 :</h3>{" "}
+                        </strong>
+                        <p>{projectDetails.step1}</p>
                         <p>
                           <strong>here is url :</strong>
                         </p>
@@ -215,12 +212,10 @@ function ProjectDetails() {
                   <Paper style={{ ...styles.paper, ...styles.text }}>
                     <div className="desp">
                       <div className={styles.aboutContent}>
-                        <p>
-                          <strong>
-                            <h3>Step 2 :</h3>{" "}
-                          </strong>
-                          {projectDetails.step2}
-                        </p>
+                        <strong>
+                          <h3>Step 2 :</h3>{" "}
+                        </strong>
+                        <p>{projectDetails.step2}</p>
                       </div>
                     </div>
                   </Paper>
@@ -233,12 +228,10 @@ function ProjectDetails() {
                   <Paper style={{ ...styles.paper, ...styles.text }}>
                     <div className="desp">
                       <div className={styles.aboutContent}>
-                        <p>
-                          <strong>
-                            <h3>Step 3 :</h3>{" "}
-                          </strong>
-                          {projectDetails.step3}
-                        </p>
+                        <strong>
+                          <h3>Step 3 :</h3>{" "}
+                        </strong>
+                        <p>{projectDetails.step3}</p>
                       </div>
                     </div>
                   </Paper>
@@ -273,12 +266,10 @@ function ProjectDetails() {
                   <Paper style={{ ...styles.paper, ...styles.text }}>
                     <div className="desp">
                       <div className={styles.aboutContent}>
-                        <p>
-                          <strong>
-                            <h3>Step 4 :</h3>{" "}
-                          </strong>
-                          {projectDetails.step4}
-                        </p>
+                        <strong>
+                          <h3>Step 4 :</h3>{" "}
+                        </strong>
+                        <p>{projectDetails.step4}</p>
                       </div>
                     </div>
                   </Paper>

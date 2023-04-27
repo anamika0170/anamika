@@ -31,7 +31,7 @@ function About() {
     },
   };
   return (
-    <div id="about" className="about">
+    <div key={myDetails._id} id="about" className="about">
       <Container className="container">
         <div className="section-title text-center center">
           <h2>About Me</h2>
@@ -60,8 +60,8 @@ function About() {
                     <Container maxWidth="xs">
                       <ul>
                         {myDetails.technicalSkills &&
-                          myDetails.technicalSkills.map((skills) => (
-                            <li>{skills}</li>
+                          myDetails.technicalSkills.map((skills, index) => (
+                            <li key={index}>{skills}</li>
                           ))}
                       </ul>
                     </Container>
