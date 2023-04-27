@@ -1,18 +1,18 @@
-import React, { createContext, useEffect, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer, useCallback } from 'react';
 import axios from 'axios';
-import appReducer from './reducers'
-import {GET_PROJECTS,GET_PROJECT_DETAILS,GET_MY_DETAILS, OPEN_MODAL, CLOSE_MODAL, GET_SOCIAL_LINKES, SEND_CONTACT_SUCCESS} from './actions'
+import appReducer from './reducers';
+import { GET_PROJECTS, GET_PROJECT_DETAILS, GET_MY_DETAILS, OPEN_MODAL, CLOSE_MODAL, GET_SOCIAL_LINKES, SEND_CONTACT_SUCCESS } from './actions';
 
 const initialState = {
   projects: [],
   projectDetails: {},
-  myDetails:{},
+  myDetails: {},
   modalOpen: false,
   modalImage: "",
-  instagram:'',
-  facebook:'',
-  linkedIn:'',
-  modalImages:[],
+  instagram: '',
+  facebook: '',
+  linkedIn: '',
+  modalImages: [],
   sending: false,
   error: null,
   message: null,
@@ -23,25 +23,13 @@ const AppContext = createContext(initialState);
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-   // axios
-   const authFetch = axios.create({
+  // axios
+  const authFetch = axios.create({
     baseURL: '/api',
   });
-  // request
 
-  // response
-
-  authFetch.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
-
-
-  const getProjects = async () => {
+  // memoized functions
+  const getProjects = useCallback(async () => {
     try {
       const response = await authFetch.get('/getMyProjects');
       dispatch({
@@ -51,9 +39,9 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [authFetch]);
 
-  const getProjectDetails = async (projectId) => {
+  const getProjectDetails = useCallback(async (projectId) => {
     try {
       const response = await authFetch.get(`/getMyProject/${projectId}`);
       dispatch({
@@ -63,9 +51,9 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [authFetch]);
 
-  const getMyDetails = async () => {
+  const getMyDetails = useCallback(async () => {
     try {
       const response = await authFetch.get(`/getMyDetails`);
       dispatch({
@@ -75,9 +63,9 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [authFetch]);
 
-   const sendContactForm = async (formData) => {
+  const sendContactForm = useCallback(async (formData) => {
     try {
       const response = await authFetch.post('/contact', formData);
       dispatch({
@@ -87,9 +75,9 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       throw error.response.data;
     }
-  };
+  }, [authFetch]);
 
-  const getSocialLinks = async () => {
+  const getSocialLinks = useCallback(async () => {
     try {
       const response = await authFetch.get(`/socialLinks`);
       dispatch({
@@ -99,20 +87,19 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [authFetch]);
 
-  const openModal = (imageUrl) => {
+  const openModal = useCallback((imageUrl) => {
     dispatch({ type: OPEN_MODAL, payload: imageUrl });
-  };
+  }, []);
 
-  const openModalImages = (modalImages) => {
+  const openModalImages = useCallback((modalImages) => {
     dispatch({ type: OPEN_MODAL, payload: modalImages });
-  };
+  }, []);
 
-  const closeModal = () => {
-    dispatch({ type:CLOSE_MODAL });
-  };
-  
+  const closeModal = useCallback(() => {
+    dispatch({ type: CLOSE_MODAL });
+  }, []);
 
   const value = {
     projects: state.projects,
@@ -135,11 +122,11 @@ const AppProvider = ({ children }) => {
     openModalImages
   };
 
-  useEffect(()=>{
-    getProjects()
-    getMyDetails()
-    getSocialLinks()
-  },[])
+  useEffect(() => {
+    getProjects();
+    getMyDetails();
+    getSocialLinks();
+  }, [getProjects, getMyDetails, getSocialLinks])
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
