@@ -19,6 +19,11 @@ const Contact = () => {
       sendContactForm(userDetails);
       setIsNotification(true);
       setFormFilled(true);
+      setUserDetails({
+        name: '',
+        email: '',
+        message: ''
+      });
     } catch (error) {
       setIsNotification(true);
       setFormFilled(false);
@@ -30,13 +35,17 @@ const Contact = () => {
     setUserDetails({ ...userDetails, [name]: value });
   };
 
+  const handleCloseAlert=()=>{
+    setIsNotification(false)
+  }
+
   const showNotification = () => {
     return (
       <>
         <Snackbar
           open={isNotification}
           autoHideDuration={6000}
-          onClose={()=>setIsNotification(false)}
+          onClose={handleCloseAlert}
           anchorOrigin={
             {
               vertical:"top",

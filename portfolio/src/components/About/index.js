@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
-import { Grid, Paper, Container, Button } from "@mui/material";
+import React, { useContext, useState } from "react";
+import { Grid, Paper, Container, Button, Snackbar, Alert } from "@mui/material";
 import "./about.css";
 import { Link } from "react-scroll";
 import { AppContext } from "../../context/appContext";
 import ViewImages from "../ViewImages";
 import aboutImage from "../../assets/about.jpeg";
 import { saveAs } from "file-saver";
-import pdfPath from '../../assets/Anamikaupdated.pdf'
+import pdfPath from "../../assets/Anamikaupdated.pdf";
 
 function About() {
+  const [showAlert, setShowAlert] = useState(false);
+  const [downloadPath, setDownloadPath] = useState("");
   const { myDetails, openModal, localMyDetailsData } = useContext(AppContext);
   const isAvailable = myDetails.length > 0 ? myDetails : localMyDetailsData;
   const styles = {
@@ -37,11 +39,17 @@ function About() {
   const handleDownload = () => {
     const pdfUrl = pdfPath;
     const pdfFileName = "Anamika-Rajput-Resume";
+    setDownloadPath(window.location.origin + "/downloads/" + pdfFileName);
     fetch(pdfUrl)
       .then((response) => response.blob())
       .then((blob) => {
-        saveAs(blob, pdfFileName);
+        saveAs(blob, pdfFileName, downloadPath);
+        setShowAlert(true);
       });
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
   };
   return (
     <div key={isAvailable._id} id="about" className="about">
@@ -52,6 +60,22 @@ function About() {
         </div>
         <div style={styles.root}>
           <Grid container spacing={3}>
+          {showAlert ? (
+            <Snackbar
+              anchorOrigin={{ vertical: "center", horizontal: "center" }}
+              open={showAlert}
+              autoHideDuration={6000}
+              onClose={handleCloseAlert}
+            >
+              <Alert
+                onClose={handleCloseAlert}
+                variant="filled"
+                severity="success"
+              >
+                PDF has been downloaded. You can find it in your download folder
+              </Alert>
+            </Snackbar>
+          ) : null}
             <Grid item xs={12} sm={6}>
               <Paper style={styles.paper}>
                 <img
@@ -92,8 +116,12 @@ function About() {
                         My Projects
                       </Link>
                     </Button>
-                    <Button onClick={handleDownload} variant="contained" className="downloadResume">
-                        Download Full Resume
+                    <Button
+                      onClick={handleDownload}
+                      variant="contained"
+                      className="downloadResume"
+                    >
+                      Download Full Resume
                     </Button>
                   </div>
                 </div>
