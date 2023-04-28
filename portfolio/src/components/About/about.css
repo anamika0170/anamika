@@ -26,9 +26,7 @@
     display: flex !important;
     flex-direction: column !important;
   }
-  .downloadResume {
-    background-color: #414a52 !important;
-    color: #9cf6f6 !important;
+  .aboutMoreInfo .downloadResume {
     margin-top: 10px !important;
   }
 }

@@ -93,16 +93,7 @@ function About() {
                       </Link>
                     </Button>
                     <Button onClick={handleDownload} variant="contained" className="downloadResume">
-                      {/* <Link
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                        className="Link"
-                        to="projects"
-                      > */}
                         Download Full Resume
-                      {/* </Link> */}
                     </Button>
                   </div>
                 </div>
