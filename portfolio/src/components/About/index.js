@@ -10,7 +10,6 @@ import pdfPath from "../../assets/Anamikaupdated.pdf";
 
 function About() {
   const [showAlert, setShowAlert] = useState(false);
-  const [downloadPath, setDownloadPath] = useState("");
   const { myDetails, openModal, localMyDetailsData } = useContext(AppContext);
   const isAvailable = myDetails.length > 0 ? myDetails : localMyDetailsData;
   const styles = {
@@ -39,12 +38,11 @@ function About() {
   const handleDownload = () => {
     const pdfUrl = pdfPath;
     const pdfFileName = "Anamika-Rajput-Resume";
-    setDownloadPath(window.location.origin + "/downloads/" + pdfFileName);
     fetch(pdfUrl)
       .then((response) => response.blob())
       .then((blob) => {
-        saveAs(blob, pdfFileName, downloadPath);
-        setShowAlert(true);
+        saveAs(blob, pdfFileName);
+        setShowAlert(true)
       });
   };
 
