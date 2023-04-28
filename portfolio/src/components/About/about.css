@@ -12,3 +12,11 @@
   text-decoration: none;
   color: #9cf6f6;
 }
+.aboutMoreInfo{
+  display: flex !important;
+  justify-content: space-evenly !important;
+}
+.downloadResume{
+  background-color:#414a52  !important;
+  color: #9cf6f6 !important;
+}

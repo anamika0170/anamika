@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import { Grid, Paper, Container, Button } from "@mui/material";
 import "./about.css";
 import { Link } from "react-scroll";
-import { AppContext } from "../../context/appContext"; 
+import { AppContext } from "../../context/appContext";
 import ViewImages from "../ViewImages";
-import aboutImage from '../../assets/about.jpeg'
+import aboutImage from "../../assets/about.jpeg";
+import { saveAs } from "file-saver";
+import pdfPath from '../../assets/Anamikaupdated.pdf'
 
 function About() {
-  const { myDetails, openModal ,localMyDetailsData} = useContext(AppContext);
-  const isAvailable = myDetails.length >0 ? myDetails : localMyDetailsData
+  const { myDetails, openModal, localMyDetailsData } = useContext(AppContext);
+  const isAvailable = myDetails.length > 0 ? myDetails : localMyDetailsData;
   const styles = {
     root: {
       flexGrow: 1,
@@ -31,6 +33,15 @@ function About() {
       textAlign: "left",
       // padding: "2rem",
     },
+  };
+  const handleDownload = () => {
+    const pdfUrl = pdfPath;
+    const pdfFileName = "Anamika-Rajput-Resume";
+    fetch(pdfUrl)
+      .then((response) => response.blob())
+      .then((blob) => {
+        saveAs(blob, pdfFileName);
+      });
   };
   return (
     <div key={isAvailable._id} id="about" className="about">
@@ -68,18 +79,32 @@ function About() {
                       </ul>
                     </Container>
                   </div>
-                  <Button variant="contained" className="viewBTN">
-                    <Link
-                      spy={true}
-                      smooth={true}
-                      offset={-70}
-                      duration={500}
-                      className="Link"
-                      to="projects"
-                    >
-                      My Projects
-                    </Link>
-                  </Button>
+                  <div className="aboutMoreInfo">
+                    <Button variant="contained" className="viewBTN">
+                      <Link
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        className="Link"
+                        to="projects"
+                      >
+                        My Projects
+                      </Link>
+                    </Button>
+                    <Button onClick={handleDownload} variant="contained" className="downloadResume">
+                      {/* <Link
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        className="Link"
+                        to="projects"
+                      > */}
+                        Download Full Resume
+                      {/* </Link> */}
+                    </Button>
+                  </div>
                 </div>
               </Paper>
             </Grid>

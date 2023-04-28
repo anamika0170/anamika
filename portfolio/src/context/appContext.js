@@ -1,9 +1,7 @@
 import React, { createContext, useEffect, useReducer, useCallback } from 'react';
 import axios from 'axios';
 import appReducer from './reducers';
-import localProjectsData from '../projectsDetails.json'
-import myData from '../myData.json';
-import localSocialLinks from '../socialLinks.json'
+import {myData,localProjectsData,localSocialLinks} from '../data/index'
 import { GET_PROJECTS, GET_PROJECT_DETAILS, GET_MY_DETAILS, OPEN_MODAL, CLOSE_MODAL, GET_SOCIAL_LINKES, SEND_CONTACT_SUCCESS } from './actions';
 
 const initialState = {
